@@ -1,21 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Header } from 'react-native-elements';
+import { useDispatch, useSelector } from 'react-redux';
+import { getArticles } from './src/store/actions';
 
-export default function App() {
+
+const App = () => {
+  const articles = useSelector(state => state.articles);
+  const dispatch = useDispatch();
+
+  useEffect(()=>{
+    dispatch(getArticles())
+  },[dispatch])
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View>
+      <Header 
+        leftComponent={{icon:'menu', color:'#fff'}}
+        centerComponent={{text:'MY TITLE', style: { color: '#fff'}}}
+        rightcomponent={{icon: 'home', color: '#fff'}}
+      />
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
