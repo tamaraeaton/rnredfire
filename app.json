@@ -1,0 +1,12 @@
+{
+  "name": "rnredfire",
+  "displayName": "rnredfire",
+  "expo": {
+    "name": "rnredfire",
+    "slug": "rnredfire",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
