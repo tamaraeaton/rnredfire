@@ -3,15 +3,16 @@ import { StyleSheet, Text, View } from 'react-native';
 import { Header } from 'react-native-elements';
 import { useDispatch, useSelector } from 'react-redux';
 import { getArticles } from './src/store/actions';
+import Authenticate from './src/authenticate';
 
 
 const App = () => {
-  const articles = useSelector(state => state.articles);
-  const dispatch = useDispatch();
+  // const articles = useSelector(state => state.articles);
+  // const dispatch = useDispatch();
 
-  useEffect(()=>{
-    dispatch(getArticles())
-  },[dispatch])
+  // useEffect(()=>{
+  //   dispatch(getArticles())
+  // },[dispatch])
 
   return (
     <View>
@@ -20,6 +21,8 @@ const App = () => {
         centerComponent={{text:'MY TITLE', style: { color: '#fff'}}}
         rightcomponent={{icon: 'home', color: '#fff'}}
       />
+      <Text>Hello Mobile App Team</Text>
+      <Authenticate />
     </View>
   );
 }
